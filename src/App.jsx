@@ -31,12 +31,12 @@ function App() {
             target="_blank"
           >
             <img
-              src="public/images/vite.svg"
+              src="images/vite.svg"
               className="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden"
               alt="main_logo"
             />
             <img
-              src="public/images/vite.svg"
+              src="images/vite.svg"
               className="hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:inline-block"
               alt="main_logo"
             />
@@ -501,7 +501,7 @@ function App() {
                           >
                             <img
                               className="w-full rounded-xl"
-                              src="public/images/team-1.jpg"
+                              src="images/team-1.jpg"
                               alt="Image placeholder"
                             />
                           </a>
@@ -538,7 +538,7 @@ function App() {
                           >
                             <img
                               className="w-full rounded-xl"
-                              src="public/images/team-1.jpg"
+                              src="images/team-1.jpg"
                               alt="Image placeholder"
                             />
                           </a>
@@ -575,7 +575,7 @@ function App() {
                           >
                             <img
                               className="w-full rounded-xl"
-                              src="public/images/team-1.jpg"
+                              src="images/team-1.jpg"
                               alt="Image placeholder"
                             />
                           </a>
@@ -612,7 +612,7 @@ function App() {
                           >
                             <img
                               className="w-full rounded-xl"
-                              src="public/images/team-1.jpg"
+                              src="images/team-1.jpg"
                               alt="Image placeholder"
                             />
                           </a>
@@ -649,7 +649,7 @@ function App() {
                           >
                             <img
                               className="w-full rounded-xl"
-                              src="public/images/team-1.jpg"
+                              src="images/team-1.jpg"
                               alt="Image placeholder"
                             />
                           </a>
