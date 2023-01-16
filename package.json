@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
-    "chart.js": "^4.1.2",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.6.2",
+    "react-router-dom": "^6.6.2",
     "recharts": "^2.3.2"
   },
   "devDependencies": {

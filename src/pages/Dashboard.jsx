@@ -5,10 +5,8 @@ import SimpleBarChart from '../components/Chart/SimpleBarChart';
 
 function Dashboard() {
   return (
-    <div className="w-full px-6 py-6 mx-auto">
-      {/* row 1 */}
+    <>
       <div className="flex flex-wrap -mx-3">
-        {/* card1 */}
         <div className="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
           <div className="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
             <div className="flex-auto p-4">
@@ -163,7 +161,7 @@ function Dashboard() {
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="flex items-center w-auto max-w-full px-3 flex-0">
                       <a
-                        href="javascript:;"
+                        href="javascript:void(0);"
                         className="inline-flex items-center justify-center w-12 h-12 text-base text-white transition-all duration-200 ease-in-out leading-inherit rounded-xl"
                       >
                         <img
@@ -177,7 +175,7 @@ function Dashboard() {
                       <h6 className="mb-0">
                         <a
                           className="dark:text-white/80"
-                          href="javascript:;"
+                          href="javascript:void(0);"
                         >
                           John Michael
                         </a>
@@ -200,7 +198,7 @@ function Dashboard() {
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="flex items-center w-auto max-w-full px-3 flex-0">
                       <a
-                        href="javascript:;"
+                        href="javascript:void(0);"
                         className="inline-flex items-center justify-center w-12 h-12 text-base text-white transition-all duration-200 ease-in-out leading-inherit rounded-xl"
                       >
                         <img
@@ -214,7 +212,7 @@ function Dashboard() {
                       <h6 className="mb-0">
                         <a
                           className="dark:text-white/80"
-                          href="javascript:;"
+                          href="javascript:void(0);"
                         >
                           Alex Smith
                         </a>
@@ -237,7 +235,7 @@ function Dashboard() {
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="flex items-center w-auto max-w-full px-3 flex-0">
                       <a
-                        href="javascript:;"
+                        href="javascript:void(0);"
                         className="inline-flex items-center justify-center w-12 h-12 text-base text-white transition-all duration-200 ease-in-out leading-inherit rounded-xl"
                       >
                         <img
@@ -251,7 +249,7 @@ function Dashboard() {
                       <h6 className="mb-0">
                         <a
                           className="dark:text-white/80"
-                          href="javascript:;"
+                          href="javascript:void(0);"
                         >
                           Samantha Ivy
                         </a>
@@ -274,7 +272,7 @@ function Dashboard() {
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="flex items-center w-auto max-w-full px-3 flex-0">
                       <a
-                        href="javascript:;"
+                        href="javascript:void(0);"
                         className="inline-flex items-center justify-center w-12 h-12 text-base text-white transition-all duration-200 ease-in-out leading-inherit rounded-xl"
                       >
                         <img
@@ -288,7 +286,7 @@ function Dashboard() {
                       <h6 className="mb-0">
                         <a
                           className="dark:text-white/80"
-                          href="javascript:;"
+                          href="javascript:void(0);"
                         >
                           Samantha Ivy
                         </a>
@@ -311,7 +309,7 @@ function Dashboard() {
                   <div className="flex flex-wrap items-center -mx-3">
                     <div className="flex items-center w-auto max-w-full px-3 flex-0">
                       <a
-                        href="javascript:;"
+                        href="javascript:void(0);"
                         className="inline-flex items-center justify-center w-12 h-12 text-base text-white transition-all duration-200 ease-in-out leading-inherit rounded-xl"
                       >
                         <img
@@ -325,7 +323,7 @@ function Dashboard() {
                       <h6 className="mb-0">
                         <a
                           className="dark:text-white/80"
-                          href="javascript:;"
+                          href="javascript:void(0);"
                         >
                           Samantha Ivy
                         </a>
@@ -555,7 +553,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
