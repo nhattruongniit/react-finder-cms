@@ -1,10 +1,23 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+
   const [isOpenNotification, setIsOpenNotification] = React.useState(false);
+  const [isOpenSetting, setIsOpenSetting] = React.useState(false);
 
   function handleOpenNotification() {
     setIsOpenNotification((prevState) => !prevState);
+  }
+
+  function handleOpenSetting() {
+    setIsOpenSetting((prevState) => !prevState);
+  }
+
+  function handleLogout() {
+    console.log("logout");
+    navigate("/sign-in");
   }
 
   return (
@@ -29,9 +42,7 @@ function Header() {
           </a>
         </div>
         <nav className="pl-3">
-          <h6 className="mb-0 font-bold text-white capitalize">
-            Dashboard
-          </h6>
+          <h6 className="mb-0 font-bold text-white capitalize">Dashboard</h6>
         </nav>
         <div
           className="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto"
@@ -50,53 +61,65 @@ function Header() {
             </div>
           </div>
           <ul className="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-            <li className="flex items-center">
-              <a
-                href="../../pages/authentication/signin/illustration.html"
-                className="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand"
+            <li className="flex items-center px-2">
+              <div
+                className="p-0 text-sm text-white transition-all ease-nav-brand"
+                onClick={handleOpenSetting}
               >
-                <i className="fa fa-user sm:mr-1" aria-hidden="true" />
-                <span className="hidden sm:inline">Sign In</span>
-              </a>
-            </li>
-            <li className="flex items-center pl-4 xl:hidden">
-              <a
-                sidenav-trigger=""
-                className="block p-0 text-sm text-white transition-all ease-nav-brand"
-                href="javascript:void(0);"
-                aria-expanded="false"
+                <i className="cursor-pointer fa fa-cog"></i>
+              </div>
+              <ul
+                className={`
+                  text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-7 before:text-5.5 dark:bg-slate-850 absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 text-left text-slate-500 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:cursor-pointer 
+                  ${
+                    isOpenSetting
+                      ? "opacity-100 transform-dropdown-show block"
+                      : "opacity-0 transform-dropdown-hide hidden"
+                  } `}
               >
-                <div className="w-4.5 overflow-hidden">
-                  <i className="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all" />
-                  <i className="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all" />
-                  <i className="ease relative block h-0.5 rounded-sm bg-white transition-all" />
-                </div>
-              </a>
+                {/* add show class on dropdown open js */}
+                <li className="relative mb-2">
+                  <div className="group ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 lg:transition-colors">
+                    <div className="flex py-1">
+                      <div className="flex flex-col justify-center">
+                        <h6 className="mb-1 text-sm font-normal leading-normal group-hover:text-slate-700 dark:text-white">
+                          Tony Nguyen
+                        </h6>
+                        <p className="mb-0 text-xs leading-tight text-slate-400 group-hover:text-slate-700 dark:text-white dark:opacity-80">
+                          <i className="mr-1 fa fa-clock" aria-hidden="true" />
+                          13 minutes ago
+                        </p>
+                      </div>
+                    </div>
+                    <hr className="w-full h-px max-w-full px-3  dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent shrink-0"></hr>
+                    <div className="flex" onClick={handleLogout}>
+                      <div className="flex flex-col justify-center">
+                        <h6 className="mb-1 text-sm font-normal leading-normal group-hover:text-slate-700 dark:text-white">
+                          Log out
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </li>
 
             {/* notifications */}
             <li className="relative flex items-center  px-4">
               <p className="hidden transform-dropdown-show" />
-              <a
-                dropdown-trigger=""
-                href="javascript:void(0);"
+              <div
                 className="block p-0 text-sm text-white transition-all ease-nav-brand"
-                aria-expanded="true"
                 onClick={handleOpenNotification}
               >
-                <i
-                  className="cursor-pointer fa fa-bell"
-                  aria-hidden="true"
-                />
-              </a>
+                <i className="cursor-pointer fa fa-bell" aria-hidden="true" />
+              </div>
               <ul
-                dropdown-menu=""
                 className={`
-                  text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-7 before:text-5.5 dark:bg-slate-850 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer 
+                  text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-7 before:text-5.5 dark:bg-slate-850 absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:cursor-pointer 
                   ${
                     isOpenNotification
-                      ? "opacity-100 transform-dropdown-show"
-                      : "opacity-0 transform-dropdown-hide"
+                      ? "opacity-100 transform-dropdown-show block"
+                      : "opacity-0 transform-dropdown-hide hidden"
                   } `}
               >
                 {/* add show class on dropdown open js */}
@@ -118,10 +141,7 @@ function Header() {
                           from Laur
                         </h6>
                         <p className="mb-0 text-xs leading-tight text-slate-400 group-hover:text-slate-700 dark:text-white dark:opacity-80">
-                          <i
-                            className="mr-1 fa fa-clock"
-                            aria-hidden="true"
-                          />
+                          <i className="mr-1 fa fa-clock" aria-hidden="true" />
                           13 minutes ago
                         </p>
                       </div>
@@ -142,15 +162,12 @@ function Header() {
                       </div>
                       <div className="flex flex-col justify-center">
                         <h6 className="mb-1 text-sm font-normal leading-normal group-hover:text-slate-700 dark:text-white">
-                          <span className="font-semibold">New album</span>{" "}
-                          by Travis Scott
+                          <span className="font-semibold">New album</span> by
+                          Travis Scott
                         </h6>
                         <p className="mb-0 text-xs leading-tight text-slate-400 group-hover:text-slate-700 dark:text-white dark:opacity-80">
-                          <i
-                            className="mr-1 fa fa-clock"
-                            aria-hidden="true"
-                          />
-                          1 day
+                          <i className="mr-1 fa fa-clock" aria-hidden="true" />1
+                          day
                         </p>
                       </div>
                     </div>
@@ -205,11 +222,8 @@ function Header() {
                           Payment successfully completed
                         </h6>
                         <p className="mb-0 text-xs leading-tight text-slate-400 group-hover:text-slate-700 dark:text-white dark:opacity-80">
-                          <i
-                            className="mr-1 fa fa-clock"
-                            aria-hidden="true"
-                          />
-                          2 days
+                          <i className="mr-1 fa fa-clock" aria-hidden="true" />2
+                          days
                         </p>
                       </div>
                     </div>
@@ -221,7 +235,7 @@ function Header() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Header
+export default Header;
